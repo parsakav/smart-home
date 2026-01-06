@@ -1,0 +1,195 @@
+{
+	"info": {
+		"_postman_id": "be72ba37-7c73-4674-8474-456df23ba014",
+		"name": "Smart Home",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22259361"
+	},
+	"item": [
+		{
+			"name": "Status",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/statistics",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"statistics"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logs",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/logs",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"logs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Set Time",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n{\r\n  \"year\": 2023,\r\n  \"month\": 12,\r\n  \"day\": 25,\r\n  \"hour\": 15,\r\n  \"minute\": 30,\r\n  \"second\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/settime",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"settime"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reboot",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/reboot",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"reboot"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Config",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"system_power\": true,\r\n  \"auto_mode\": false,\r\n  \"child_lock\": false,\r\n  \"child_protect\": true,\r\n  \"party_mode\": false,\r\n  \"lights\": {\r\n    \"main_room\": \"SLEEP\",\r\n    \"room_1\": \"SLEEP\",\r\n    \"room_2\": \"ON\"\r\n  },\r\n  \"fans\": {\r\n    \"main_fan\": false,\r\n    \"room_1_fan\": false,\r\n    \"room_2_fan\": false\r\n  },\r\n  \"door_is_open\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/config",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"config"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "http://localhost:8180",
+			"type": "default"
+		}
+	]
+}
